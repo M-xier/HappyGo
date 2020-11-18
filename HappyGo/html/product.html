@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>快乐购 - 商品管理</title>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/default.css" />
+
+		<!-- JS -->
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/default.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--[if lt IE 9]>
+			<script src="../js/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../js/respond.min.js" type="text/javascript" charset="utf-8"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!-- 导航条开始 -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#navbar-menu1" data-toggle="collapse" class="navbar-toggle collapsed">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a href="../index.html" class="navbar-brand">
+						<img src="../img/logo.png" alt="Happy Go" />
+					</a>
+				</div>
+				<div id="navbar-menu1" class="navbar-collapse collapse">
+					<div class="navbar-text">
+						<span>Admin，</span>
+						<span>欢迎来到快乐购管理页面！&nbsp;</span>
+						<div class="visible-xs"></div>
+						<span>[<a href="login.html">注销</a>]&nbsp;</span>
+					</div>
+
+					<div class="navbar-right">
+						<ul class="navbar-nav nav">
+							<li>
+								<a href="index.html">管理首页</a>
+							</li>
+							<li class="dropdown active">
+								<a href="#" data-toggle="dropdown">
+									<span>商品</span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="product-category.html">类别管理</a>
+									</li>
+									<li class="active">
+										<a href="product.html">商品管理</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="order.html">订单</a>
+							</li>
+							<li>
+								<a href="user.html">用户</a>
+							</li>
+							<li>
+								<a href="news.html">新闻</a>
+							</li>
+							<li>
+								<a href="ads.html">广告</a>
+							</li>
+							<li>
+								<a href="../index.html">购物首页</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- //导航条结束 -->
+
+		<!-- 页面主体部分 -->
+		<div class="container">
+			<div class="h3 page-header">
+				<span>商品管理</span>
+				<small class="pull-right">
+					<a href="#modal-add-product" class="btn btn-xs btn-primary" data-toggle="modal">新增商品</a>
+				</small>
+			</div>
+
+			<!-- 商品名称搜索表单 -->
+			<form action="" class="form-inline">
+				<div class="form-group form-group-sm">
+					<label class="control-label">商品名称</label>
+					<input type="search" class="form-control" placeholder="输入商品名称关键字..." />
+					<button class="btn btn-sm btn-default">
+						<span class="glyphicon glyphicon-zoom-in"></span>
+						<span class="sr-only">搜索</span>
+					</button>
+				</div>
+			</form>
+
+			<br />
+
+			<!-- 商品数据 -->
+			<table class="table table-hover table-striped">
+				<thead class="bg-primary">
+					<tr>
+						<th>#</th>
+						<th>名称</th>
+						<th>单价(元)</th>
+						<th>库存</th>
+						<th class="hidden-xs">分类</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<img src="../img/products/a.png" height="20" />
+						</td>
+						<td>
+							<div class="product-title">王小鸭双面羊绒大衣女中长款2017新款韩版潮长袖秋冬装毛呢外套女</div>
+						</td>
+						<td>1,398.00</td>
+						<td>86</td>
+						<td class="hidden-xs">
+							<span class="text-info">女装 /内衣</span>
+							<span class="hidden-sm">-</span>
+							<div class="hidden-md hidden-lg"></div>
+							<span class="text-info">毛呢外套</span>
+						</td>
+						<td>
+							<div class="dropdown">
+								<button class="btn btn-xs btn-primary" data-toggle="dropdown">
+									<span>管理</span>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#modal-show-product" data-toggle="modal">查看</a>
+									</li>
+									<li>
+										<a href="#modal-edit-product" data-toggle="modal">编辑</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="" data-del="">
+											<span class="text-danger">移除</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="../img/products/b.png" height="20" />
+						</td>
+						<td>
+							<div class="product-title">2017秋冬新款无双面羊绒大衣女短款韩版潮小个子羊毛呢子外套加厚</div>
+						</td>
+						<td>398.00</td>
+						<td>133</td>
+						<td class="hidden-xs">
+							<span class="text-info">女装 /内衣</span>
+							<span class="hidden-sm">-</span>
+							<div class="hidden-md hidden-lg"></div>
+							<span class="text-info">毛呢外套</span>
+						</td>
+						<td>
+							<div class="dropdown">
+								<button class="btn btn-xs btn-primary" data-toggle="dropdown">
+									<span>管理</span>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#modal-show-product" data-toggle="modal">查看</a>
+									</li>
+									<li>
+										<a href="#modal-edit-product" data-toggle="modal">编辑</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="" data-del="">
+											<span class="text-danger">移除</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="../img/products/c.png" height="20" />
+						</td>
+						<td>
+							<div class="product-title">Five Plus新女冬装刺绣双排扣长款长袖毛呢西装外套2HD5345220</div>
+						</td>
+						<td>339.00</td>
+						<td>41</td>
+						<td class="hidden-xs">
+							<span class="text-info">女装 /内衣</span>
+							<span class="hidden-sm">-</span>
+							<div class="hidden-md hidden-lg"></div>
+							<span class="text-info">毛呢外套</span>
+						</td>
+						<td>
+							<div class="dropdown">
+								<button class="btn btn-xs btn-primary" data-toggle="dropdown">
+									<span>管理</span>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#modal-show-product" data-toggle="modal">查看</a>
+									</li>
+									<li>
+										<a href="#modal-edit-product" data-toggle="modal">编辑</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="" data-del="">
+											<span class="text-danger">移除</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="../img/products/g.png" height="20" />
+						</td>
+						<td>
+							<div class="product-title">MECITY女装2017冬季新款双面呢羊毛系带大衣外套</div>
+						</td>
+						<td>1,499.00</td>
+						<td>22</td>
+						<td class="hidden-xs">
+							<span class="text-info">女装 /内衣</span>
+							<span class="hidden-sm">-</span>
+							<div class="hidden-md hidden-lg"></div>
+							<span class="text-info">毛呢外套</span>
+						</td>
+						<td>
+							<div class="dropdown">
+								<button class="btn btn-xs btn-primary" data-toggle="dropdown">
+									<span>管理</span>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#modal-show-product" data-toggle="modal">查看</a>
+									</li>
+									<li>
+										<a href="#modal-edit-product" data-toggle="modal">编辑</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="" data-del="">
+											<span class="text-danger">移除</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="../img/products/h.png" height="20" />
+						</td>
+						<td>
+							<div class="product-title">Apple MacBook Air 13.3英寸笔记本电脑I5 8G 128G MQD32CH/A银色</div>
+						</td>
+						<td>6,058.00</td>
+						<td>100</td>
+						<td class="hidden-xs">
+							<span class="text-info">手机/数码/电脑办公 </span>
+							<span class="hidden-sm">-</span>
+							<div class="hidden-md hidden-lg"></div>
+							<span class="text-info">笔记本</span>
+						</td>
+						<td>
+							<div class="dropdown">
+								<button class="btn btn-xs btn-primary" data-toggle="dropdown">
+									<span>管理</span>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#modal-show-product" data-toggle="modal">查看</a>
+									</li>
+									<li>
+										<a href="#modal-edit-product" data-toggle="modal">编辑</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="" data-del="">
+											<span class="text-danger">移除</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+		<!-- 查看商品模态框部分 -->
+		<div id="modal-show-product" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove"></span>
+							<span class="sr-only">关闭</span>
+						</button>
+						<div class="modal-title">
+							<span class="glyphicon glyphicon-zoom-in"></span>
+							<span>查看商品</span>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-4">
+									<div class="form-group">
+										<div class="col-xs-12">
+											<img src="../img/products/h.png" class="img-thumbnail img-responsive" />
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-8 form-horizontal">
+									<div class="form-group">
+										<label class="control-label col-xs-3">商品名称</label>
+										<div class="col-xs-9">
+											<div class="form-control-static">
+												Apple MacBook Air 13.3英寸笔记本电脑I5 8G 128G MQD32CH/A银色
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">单价</label>
+										<div class="col-xs-9">
+											<div class="form-control-static">
+												￥6,058.00
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">库存量</label>
+										<div class="col-xs-9">
+											<div class="form-control-static">
+												100
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">类别</label>
+										<div class="col-xs-9">
+											<div class="form-control-static">
+												手机/数码/电脑办公
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">子类别</label>
+										<div class="col-xs-9">
+											<div class="form-control-static">
+												笔记本
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="form-group">
+								<div class="col-xs-12">
+									<label class="control-label">详情</label>
+									<div class="form-control-static">
+										品牌名称：Apple/苹果
+										<br/> 更多参数产品参数： <br/> 产品名称：Apple/苹果 MacBook Air ...<br/> 品牌: Apple/苹果<br/> 屏幕尺寸: 13.3英寸<br/> CPU: 不详<br/> 显卡类型: 英特尔 HD Graphics 6000<br/> 显存容量: 共享内存容量<br/> 机械硬盘容量: 无机械硬盘<br/> 内存容量: 8GB<br/> 操作系统: Mac OS
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //查看商品模态框部分结束 -->
+
+		<!-- 新增商品模态框部分 -->
+		<div id="modal-add-product" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove"></span>
+							<span class="sr-only">关闭</span>
+						</button>
+						<div class="modal-title">
+							<span class="glyphicon glyphicon-plus"></span>
+							<span>新增商品</span>
+						</div>
+					</div>
+					<div class="modal-body">
+						<form id="form-add-product" action="" class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-4">
+									<div class="form-group">
+										<div class="col-xs-12">
+											<label>
+												<img src="../img/products/product_default.png" class="img-thumbnail img-responsive"/>
+												<input type="file" accept="image/*" class="hidden" />
+											</label>
+											<div class="text-muted">
+												*点击设置图片
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-8 form-horizontal">
+									<div class="form-group">
+										<label class="control-label col-xs-3">商品名称</label>
+										<div class="col-xs-9">
+											<input type="text" class="form-control" required="required" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">单价</label>
+										<div class="col-xs-9">
+											<input type="number" class="form-control" min="0.00" step="1.00" required="required" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">库存量</label>
+										<div class="col-xs-9">
+											<input type="number" class="form-control" min="1" required="required" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">类别</label>
+										<div class="col-xs-9">
+											<select class="form-control" required="required">
+												<option>女装/内衣</option>
+												<option>男装/运动户外</option>
+												<option>女鞋/男鞋/箱包</option>
+												<option>手机/数码/电脑办公</option>
+											</select>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-xs-3">子类别</label>
+										<div class="col-xs-9">
+											<select class="form-control" required="required">
+												<option>毛呢外套</option>
+												<option>羽绒服</option>
+												<option>棉服</option>
+												<option>夹克</option>
+											</select>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="col-xs-12">
+									<label class="control-label">详情</label>
+									<textarea class="form-control" rows="5"></textarea>
+								</div>
+							</div>
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary" form="form-add-product">新增商品</button>
+						<button class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //新增商品模态框部分结束 -->
+		
+		<!-- 编辑商品模态框部分 -->
+		<div id="modal-edit-product" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove"></span>
+							<span class="sr-only">关闭</span>
+						</button>
+						<div class="modal-title">
+							<span class="glyphicon glyphicon-edit"></span>
+							<span>编辑商品</span>
+						</div>
+					</div>
+					<div class="modal-body">
+						<form id="form-edit-product" action="" class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-4">
+									<div class="form-group">
+										<div class="col-xs-12">
+											<label>
+												<img src="../img/products/h.png" class="img-thumbnail img-responsive"/>
+												<input type="file" accept="image/*" class="hidden" />
+											</label>
+											<div class="text-muted">
+												*点击设置图片
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-8 form-horizontal">
+									<div class="form-group">
+										<label class="control-label col-xs-3">商品名称</label>
+										<div class="col-xs-9">
+											<input type="text" class="form-control" required="required" value="Apple MacBook Air 13.3英寸笔记本电脑I5 8G 128G MQD32CH/A银色" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">单价</label>
+										<div class="col-xs-9">
+											<input type="number" class="form-control" min="0.00" step="1.00" required="required" value="6058.00" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">库存量</label>
+										<div class="col-xs-9">
+											<input type="number" class="form-control" min="1" required="required" value="100" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-xs-3">类别</label>
+										<div class="col-xs-9">
+											<select class="form-control" required="required">
+												<option>女装/内衣</option>
+												<option>男装/运动户外</option>
+												<option>女鞋/男鞋/箱包</option>
+												<option selected="selected">手机/数码/电脑办公</option>
+											</select>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-xs-3">子类别</label>
+										<div class="col-xs-9">
+											<select class="form-control" required="required">
+												<option>笔记本</option>
+												<option>平板电脑</option>
+												<option>台式机</option>
+											</select>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="col-xs-12">
+									<label class="control-label">详情</label>
+									<textarea class="form-control" rows="5">品牌名称：Apple/苹果<br/> 更多参数产品参数： <br/> 产品名称：Apple/苹果 MacBook Air ...<br/> 品牌: Apple/苹果<br/> 屏幕尺寸: 13.3英寸<br/> CPU: 不详<br/> 显卡类型: 英特尔 HD Graphics 6000<br/> 显存容量: 共享内存容量<br/> 机械硬盘容量: 无机械硬盘<br/> 内存容量: 8GB<br/> 操作系统: Mac OS</textarea>
+								</div>
+							</div>
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary" form="form-edit-product">更新商品</button>
+						<button class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //编辑商品模态框部分结束 -->
+
+		<!-- //页面主体部分结束 -->
+
+		<!-- 页面脚部部分 -->
+		<footer>
+			<hr/>
+			<div class="container">
+				<div class="row">
+					<div class="text-center">
+						<div class="col-sm-6 auth">
+							<img src="../img/foot_img3.png" class="img-responsive center-block sm-right" alt="">
+						</div>
+						<div class="col-sm-6 auth">
+							<img src="../img/foot_img4.png" class="img-responsive center-block sm-left" alt="">
+						</div>
+						<div class="clearfix"></div>
+						<div class="copy">Rights Reserved 免费服务热线: 400-705-1111 | 固话也可拨打: 800-705-1111 E-Mail: service@happygo.com</div>
+						<div class="copy">湘ICP备12000157号 信息网络传播视听节目许可证号：1810530</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //页面脚部部分结束 -->
+
+	</body>
+
+</html>

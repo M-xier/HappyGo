@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>快乐购 - 订单管理</title>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/default.css" />
+
+		<!-- JS -->
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/default.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--[if lt IE 9]>
+			<script src="../js/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../js/respond.min.js" type="text/javascript" charset="utf-8"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!-- 导航条开始 -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#navbar-menu1" data-toggle="collapse" class="navbar-toggle collapsed">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a href="../index.html" class="navbar-brand">
+						<img src="../img/logo.png" alt="Happy Go" />
+					</a>
+				</div>
+				<div id="navbar-menu1" class="navbar-collapse collapse">
+					<div class="navbar-text">
+						<span>Admin，</span>
+						<span>欢迎来到快乐购管理页面！&nbsp;</span>
+						<div class="visible-xs"></div>
+						<span>[<a href="login.html">注销</a>]&nbsp;</span>
+					</div>
+
+					<div class="navbar-right">
+						<ul class="navbar-nav nav">
+							<li>
+								<a href="index.html">管理首页</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown">
+									<span>商品</span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="product-category.html">类别管理</a>
+									</li>
+									<li>
+										<a href="product.html">商品管理</a>
+									</li>
+								</ul>
+							</li>
+							<li class="active">
+								<a href="order.html">订单</a>
+							</li>
+							<li>
+								<a href="user.html">用户</a>
+							</li>
+							<li>
+								<a href="news.html">新闻</a>
+							</li>
+							<li>
+								<a href="ads.html">广告</a>
+							</li>
+							<li>
+								<a href="../index.html">购物首页</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- //导航条结束 -->
+
+		<!-- 页面主体部分 -->
+		<div class="container">
+			<div class="h3 page-header">
+				<span>订单管理</span>
+			</div>
+			
+			<div class="form-horizontal">
+				
+				<div class="order-item">
+					<div class="form-group">
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">订单号</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">
+								<span class="text-primary">2018072112564300002</span>
+							</div>
+						</div>
+						
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">下单用户</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">
+								<span class="text-primary">userA</span>
+							</div>
+						</div>
+						
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">收货人</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">李双江 [<span class="text-primary">13888888888</span>]</div>
+						</div>
+	
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">订单状态</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">运送中</div>
+						</div>
+	
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">订单金额</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">￥8889,888.00</div>
+						</div>
+	
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">订单时间</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">2018-07-22 13:42:03</div>
+						</div>
+	
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">收货地址</label>
+						<div class="col-xs-9 col-sm-5 col-md-5">
+							<div class="form-control-static">湖南省长沙市芙蓉区人民路666号</div>
+						</div>
+	
+						<div class="col-xs-12 col-sm-4">
+							<div class="btn-group btn-group-justified">
+								<div class="btn-group">
+									<a href="#order-detail-2" data-toggle="collapse" class="btn btn-default">查看订单明细</a>
+								</div>
+								<div class="btn-group dropdown">
+									<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										<span>订单状态</span>
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="">已下单</a>
+										</li>
+										<li>
+											<a href="">配货中</a>
+										</li>
+										<li>
+											<a href="">运送中</a>
+										</li>
+										<li>
+											<a href="">等等确认收货</a>
+										</li>
+										<li>
+											<a href="">已确认收货</a>
+										</li>
+										<li class="divider"></li>
+										<li>
+											<a href="">申诉中</a>
+										</li>
+										<li>
+											<a href="">退货中</a>
+										</li>
+										<li>
+											<a href="">已退货</a>
+										</li>
+										<li>
+											<a href="">已取消</a>
+										</li>
+									</ul>
+								</div>
+								<div class="btn-group">
+									<a href="" data-del="" class="btn btn-danger">删除订单</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 明细 -->
+					<div id="order-detail-2" class="collapse collapsed">
+						<div class="order-detail">
+							<div>
+								<span class="text-muted">棉衣女中长款韩版2017冬装新款羽绒棉服大毛领修身百搭棉袄外套潮</span>
+								<span class="text-primary">&nbsp;x2</span>
+								<span class="text-danger">&nbsp;￥999,999.00</span>
+							</div>
+							<div>
+								<span class="text-muted">Five Plus新女冬装刺绣双排扣长款长袖毛呢西装外套2HD5345220</span>
+								<span class="text-primary">&nbsp;x2</span>
+								<span class="text-danger">&nbsp;￥888,888.00</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="order-item">
+					<div class="form-group">
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">订单号</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">
+								<span class="text-primary">2018072112564300001</span>
+							</div>
+						</div>
+						
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">下单用户</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">
+								<span class="text-primary">userA</span>
+							</div>
+						</div>
+						
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">收货人</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">李大钊 [<span class="text-primary">13999999999</span>]</div>
+						</div>
+	
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">订单状态</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">已确认收货</div>
+						</div>
+	
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">订单金额</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">￥999,999.00</div>
+						</div>
+	
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">订单时间</label>
+						<div class="col-xs-9 col-sm-4 col-md-5">
+							<div class="form-control-static">2018-07-21 12:56:43</div>
+						</div>
+	
+						<label class="control-label col-xs-3 col-sm-2 col-md-1">收货地址</label>
+						<div class="col-xs-9 col-sm-5 col-md-5">
+							<div class="form-control-static">湖南省长沙市芙蓉区远大路888号</div>
+						</div>
+	
+						<div class="col-xs-12 col-sm-4">
+							<div class="btn-group btn-group-justified">
+								<div class="btn-group">
+									<a href="#order-detail-1" data-toggle="collapse" class="btn btn-default">查看订单明细</a>
+								</div>
+								<div class="btn-group dropdown">
+									<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										<span>订单状态</span>
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="">已下单</a>
+										</li>
+										<li>
+											<a href="">配货中</a>
+										</li>
+										<li>
+											<a href="">运送中</a>
+										</li>
+										<li>
+											<a href="">等等确认收货</a>
+										</li>
+										<li>
+											<a href="">已确认收货</a>
+										</li>
+										<li class="divider"></li>
+										<li>
+											<a href="">申诉中</a>
+										</li>
+										<li>
+											<a href="">退货中</a>
+										</li>
+										<li>
+											<a href="">已退货</a>
+										</li>
+										<li>
+											<a href="">已取消</a>
+										</li>
+									</ul>
+								</div>
+								<div class="btn-group">
+									<a href="" data-del="" class="btn btn-danger">删除订单</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 明细 -->
+					<div id="order-detail-1" class="collapse collapsed">
+						<div class="order-detail">
+							<div>
+								<span class="text-muted">棉衣女中长款韩版2017冬装新款羽绒棉服大毛领修身百搭棉袄外套潮</span>
+								<span class="text-primary">&nbsp;x2</span>
+								<span class="text-danger">&nbsp;￥999,999.00</span>
+							</div>
+							<div>
+								<span class="text-muted">Five Plus新女冬装刺绣双排扣长款长袖毛呢西装外套2HD5345220</span>
+								<span class="text-primary">&nbsp;x2</span>
+								<span class="text-danger">&nbsp;￥888,888.00</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			
+		</div>
+		<!-- //页面主体部分结束 -->
+
+		<!-- 页面脚部部分 -->
+		<footer>
+			<hr/>
+			<div class="container">
+				<div class="row">
+					<div class="text-center">
+						<div class="col-sm-6 auth">
+							<img src="../img/foot_img3.png" class="img-responsive center-block sm-right" alt="">
+						</div>
+						<div class="col-sm-6 auth">
+							<img src="../img/foot_img4.png" class="img-responsive center-block sm-left" alt="">
+						</div>
+						<div class="clearfix"></div>
+						<div class="copy">Rights Reserved 免费服务热线: 400-705-1111 | 固话也可拨打: 800-705-1111 E-Mail: service@happygo.com</div>
+						<div class="copy">湘ICP备12000157号 信息网络传播视听节目许可证号：1810530</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //页面脚部部分结束 -->
+
+	</body>
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>快乐购 - 注册</title>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+
+		<!-- JS -->
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/respond.min.js" type="text/javascript" charset="utf-8"></script>
+		<![endif]-->
+
+		<script type="text/javascript">
+			$(function() {
+				$('form input').on('input', function() {
+					$(this).parents('.has-error').removeClass('has-error');
+					$('#login-error-message').empty();
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<!-- 导航条开始 -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#navbar-menu1" data-toggle="collapse" class="navbar-toggle collapsed">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a href="index.html" class="navbar-brand">
+						<img src="img/logo.png" alt="Happy Go" />
+					</a>
+				</div>
+				<div id="navbar-menu1" class="navbar-collapse collapse">
+					<div class="navbar-text">
+						<span>欢迎来到快乐购！&nbsp;</span>
+						<div class="visible-xs"></div>
+						<span>[<a href="login.html">登录</a>]&nbsp;</span>
+					</div>
+					<div class="navbar-right">
+						<img src="img/top_center.jpg" class="img-responsive" />
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- //导航条结束 -->
+
+		<!-- 页面主体部分 -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-8">
+					<img src="img/register_img.jpg" class="img-thumbnail img-responsive" style="width: 100%;" />
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<h3>
+						<span class="text-danger">注册快乐购账号</span>
+						<br />
+						<small>已有快乐购账号?</small>
+						<a href="login.html" class="small btn btn-link">去登录</a>
+					</h3>
+					<form id="regH" action="##" class="form-horizontal">
+						<div class="form-group has-feedback has-error">
+							<label for="login" class="control-label col-md-3">用户名</label>
+							<div class="col-md-9">
+								<input name="login" id="login" type="text" class="form-control" required="required" autofocus="autofocus" value="admin" />
+								<span class="form-control-feedback glyphicon glyphicon-user"></span>
+							</div>
+						</div>
+						<div class="form-group has-feedback">
+							<label for="pwd" class="control-label col-md-3">密码</label>
+							<div class="col-md-9">
+								<input name="pwd" id="pwd" type="password" class="form-control" required="required" />
+								<span class="form-control-feedback glyphicon glyphicon-lock"></span>
+							</div>
+						</div>
+						<div class="form-group has-feedback">
+							<label for="pwd2" class="control-label col-md-3">确认密码</label>
+							<div class="col-md-9">
+								<input name="pwd2" id="pwd2" type="password" class="form-control" required="required" />
+								<span class="form-control-feedback glyphicon glyphicon-lock"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="code" class="control-label col-md-3">验证码</label>
+							<div class="col-md-9">
+								<div class="input-group">
+									<input name="code" id="code" type="text" class="form-control" required="required" />
+									<span class="input-group-addon code-addon">
+										<img src="img/vcode-test.png" alt="" class="input-group-addon code-addon" />
+									</span>
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button">
+											<span class="glyphicon glyphicon-refresh"></span>
+									</button>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-9 col-md-push-3">
+								<div class="form-control-static">
+									<span id="login-error-message" class="text-danger">* 用户名已被占用</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-12">
+								<div class="btn-group btn-group-justified">
+									<div class="btn-group">
+										<button type="button" id="regBtn" class="btn btn-success">创建快乐购账号</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- //页面主体部分结束 -->
+
+		<!-- 页面脚部部分 -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6 col-sm-4 col-md-2 tip-item">
+						<img src="img/foot_img_tip1.png" class="img-responsive center-block">
+						<div class="h4 text-danger">上市企业</div>
+						<div class="h5 text-muted">股票代码000001</div>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-2 tip-item">
+						<img src="img/foot_img_tip2.png" class="img-responsive center-block">
+						<div class="h4 text-danger">快乐购严选</div>
+						<div class="h5 text-muted">正品行货 品质保证</div>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-2 tip-item">
+						<img src="img/foot_img_tip3.png" class="img-responsive center-block">
+						<div class="h4 text-danger">10天无理由退货</div>
+						<div class="h5 text-muted">为您提供售后无忧保障</div>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-2 tip-item">
+						<img src="img/foot_img_tip4.png" class="img-responsive center-block">
+						<div class="h4 text-danger">满129免邮</div>
+						<div class="h5 text-muted">在线支付 购物包邮</div>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-2 tip-item">
+						<img src="img/foot_img_tip5.png" class="img-responsive center-block">
+						<div class="h4 text-danger">微笑无时无刻</div>
+						<div class="h5 text-muted">365*24小时人工服务</div>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-2 tip-item">
+						<img src="img/foot_img_tip6.png" class="img-responsive center-block">
+						<div class="h4 text-danger">闪电物流</div>
+						<div class="h5 text-muted">闪电发货 次日必达</div>
+					</div>
+				</div>
+			</div>
+			<hr/>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-4 col-sm-2 f-link">
+						<a href="#">使用帮助</a>
+						<a href="#">税费收取规则</a>
+						<a href="#">新手指南</a>
+						<a href="#">常见问题</a>
+						<a href="#">用户协议</a>
+					</div>
+					<div class="col-xs-4 col-sm-2 f-link">
+						<a href="#">使用帮助</a>
+						<a href="#">税费收取规则</a>
+						<a href="#">新手指南</a>
+						<a href="#">常见问题</a>
+						<a href="#">用户协议</a>
+					</div>
+					<div class="col-xs-4 col-sm-2 f-link">
+						<a href="#">使用帮助</a>
+						<a href="#">税费收取规则</a>
+						<a href="#">新手指南</a>
+						<a href="#">常见问题</a>
+						<a href="#">用户协议</a>
+					</div>
+					<div class="col-xs-4 col-sm-2 f-link">
+						<a href="#">使用帮助</a>
+						<a href="#">税费收取规则</a>
+						<a href="#">新手指南</a>
+						<a href="#">常见问题</a>
+						<a href="#">用户协议</a>
+					</div>
+					<div class="col-xs-4 col-sm-2 f-link">
+						<div>手机快乐购</div>
+						<img src="img/footer_ewm_01.png" alt="">
+						<div>下载移动客户端</div>
+					</div>
+					<div class="col-xs-4 col-sm-2 f-link">
+						<div>快乐微信购</div>
+						<img src="img/footer_ewm_01.png" alt="">
+						<div>快乐购官方微信</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="text-center">
+						<div class="col-sm-6 auth">
+							<img src="img/foot_img3.png" class="img-responsive center-block sm-right" alt="">
+						</div>
+						<div class="col-sm-6 auth">
+							<img src="img/foot_img4.png" class="img-responsive center-block sm-left" alt="">
+						</div>
+						<div class="clearfix"></div>
+						<div class="copy">Rights Reserved 免费服务热线: 400-705-1111 | 固话也可拨打: 800-705-1111 E-Mail: service@happygo.com</div>
+						<div class="copy">湘ICP备12000157号 信息网络传播视听节目许可证号：1810530</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //页面脚部部分结束 -->
+	</body>
+
+</html>

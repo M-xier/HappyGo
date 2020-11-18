@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>快乐购 - 新闻公告管理</title>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/default.css" />
+
+		<!-- JS -->
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/default.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--[if lt IE 9]>
+			<script src="../js/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../js/respond.min.js" type="text/javascript" charset="utf-8"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!-- 导航条开始 -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#navbar-menu1" data-toggle="collapse" class="navbar-toggle collapsed">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a href="../index.html" class="navbar-brand">
+						<img src="../img/logo.png" alt="Happy Go" />
+					</a>
+				</div>
+				<div id="navbar-menu1" class="navbar-collapse collapse">
+					<div class="navbar-text">
+						<span>Admin，</span>
+						<span>欢迎来到快乐购管理页面！&nbsp;</span>
+						<div class="visible-xs"></div>
+						<span>[<a href="login.html">注销</a>]&nbsp;</span>
+					</div>
+
+					<div class="navbar-right">
+						<ul class="navbar-nav nav">
+							<li>
+								<a href="index.html">管理首页</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown">
+									<span>商品</span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="product-category.html">类别管理</a>
+									</li>
+									<li>
+										<a href="product.html">商品管理</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="order.html">订单</a>
+							</li>
+							<li>
+								<a href="user.html">用户</a>
+							</li>
+							<li class="active">
+								<a href="news.html">新闻</a>
+							</li>
+							<li>
+								<a href="ads.html">广告</a>
+							</li>
+							<li>
+								<a href="../index.html">购物首页</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- //导航条结束 -->
+
+		<!-- 页面主体部分 -->
+		<div class="container">
+			<div class="h3 page-header">
+				<span>新闻公告管理</span>
+				<small class="pull-right">
+					<a href="#modal-add-news" class="btn btn-xs btn-primary" data-toggle="modal">新增新闻公告</a>
+				</small>
+			</div>
+
+			<table class="table table-hover table-striped">
+				<thead class="bg-primary">
+					<th>标题</th>
+					<th>时间</th>
+					<th>操作</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>迎双旦促销大酬宾</td>
+						<td>2010-12-24 12:11:23</td>
+						<td>
+							<a href="#modal-show-news" class="btn btn-xs btn-default" data-toggle="modal">详细</a>
+							<a href="#modal-edit-news" class="btn btn-xs btn-default" data-toggle="modal">编辑</a>
+							<a href="" data-del="" class="btn btn-xs btn-danger">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>加入会员，赢千万大礼包</td>
+						<td>2017-12-31 19:29:56</td>
+						<td>
+							<a href="#modal-show-news" class="btn btn-xs btn-default" data-toggle="modal">详细</a>
+							<a href="#modal-edit-news" class="btn btn-xs btn-default" data-toggle="modal">编辑</a>
+							<a href="" data-del="" class="btn btn-xs btn-danger">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>免费送</td>
+						<td>2017-12-31 19:29:51</td>
+						<td>
+							<a href="#modal-show-news" class="btn btn-xs btn-default" data-toggle="modal">详细</a>
+							<a href="#modal-edit-news" class="btn btn-xs btn-default" data-toggle="modal">编辑</a>
+							<a href="" data-del="" class="btn btn-xs btn-danger">删除</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- 查看新闻公告模态框部分 -->
+		<div id="modal-show-news" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove"></span>
+							<span class="sr-only">关闭</span>
+						</button>
+						<div class="modal-title">
+							<span class="glyphicon glyphicon-list"></span>
+							<span>新闻公告详细</span>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="panel panel-primary">
+							<div class="panel-body">
+								<label class="h3">迎双旦促销大酬宾</label>
+								<hr />
+								<div>迎双旦促销大酬宾，迎双旦促销大酬宾，迎双旦促销大酬宾，迎双旦促销大酬宾，迎双旦促销大酬宾，迎双旦促销大酬宾</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //查看新闻公告模态框部分结束 -->
+
+		<!-- 添加新闻公告模态框部分 -->
+		<div id="modal-add-news" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove"></span>
+							<span class="sr-only">关闭</span>
+						</button>
+						<div class="modal-title">
+							<span class="glyphicon glyphicon-plus"></span>
+							<span>新增新闻公告</span>
+						</div>
+					</div>
+					<div class="modal-body">
+						<form id="form-add-news" action="" class="form-horizontal">
+							<div class="form-group">
+								<label class="control-label col-sm-2">标题</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" required="required"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2">内容</label>
+								<div class="col-sm-10">
+									<textarea rows="5" class="form-control" required="required"></textarea>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-success" type="submit" form="form-add-news">新增新闻公告</button>
+						<button class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //添加新闻公告模态框部分结束 -->
+
+		<!-- 编辑新闻公告模态框部分 -->
+		<div id="modal-edit-news" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove"></span>
+							<span class="sr-only">关闭</span>
+						</button>
+						<div class="modal-title">
+							<span class="glyphicon glyphicon-edit"></span>
+							<span>编辑新闻公告</span>
+						</div>
+					</div>
+					<div class="modal-body">
+						<form id="form-edit-news" action="" class="form-horizontal">
+							<div class="form-group">
+								<label class="control-label col-sm-2">标题</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" required="required" value="迎双旦促销大酬宾"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2">内容</label>
+								<div class="col-sm-10">
+									<textarea rows="5" class="form-control" required="required">迎双旦促销大酬宾，迎双旦促销大酬宾，迎双旦促销大酬宾，迎双旦促销大酬宾，迎双旦促销大酬宾，迎双旦促销大酬宾</textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2">时间</label>
+								<div class="col-sm-10">
+									<div class="form-control-static">2010-12-24 12:11:23</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-success" type="submit" form="form-edit-news">更新新闻公告</button>
+						<button class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //编辑新闻公告模态框部分结束 -->
+
+		<!-- //页面主体部分结束 -->
+
+		<!-- 页面脚部部分 -->
+		<footer>
+			<hr/>
+			<div class="container">
+				<div class="row">
+					<div class="text-center">
+						<div class="col-sm-6 auth">
+							<img src="../img/foot_img3.png" class="img-responsive center-block sm-right" alt="">
+						</div>
+						<div class="col-sm-6 auth">
+							<img src="../img/foot_img4.png" class="img-responsive center-block sm-left" alt="">
+						</div>
+						<div class="clearfix"></div>
+						<div class="copy">Rights Reserved 免费服务热线: 400-705-1111 | 固话也可拨打: 800-705-1111 E-Mail: service@happygo.com</div>
+						<div class="copy">湘ICP备12000157号 信息网络传播视听节目许可证号：1810530</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //页面脚部部分结束 -->
+
+	</body>
+
+</html>
